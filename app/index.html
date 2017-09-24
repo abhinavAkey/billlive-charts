@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="webApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="webApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="webApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="webApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Billlive</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="css/gstApplication.css">
+  <link rel="stylesheet" href="css/global.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css">
+
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: 'AIzaSyDHK9x10T4rlDEF560xr7bXcTgk_PEbD6E',
+      authDomain: 'billlive-2ebb8.firebaseapp.com',
+      databaseURL: 'https://billlive-2ebb8.firebaseio.com',
+      projectId: 'billlive-2ebb8',
+      storageBucket: 'billlive-2ebb8.appspot.com',
+      messagingSenderId: '709350215286'
+    };
+    firebase.initializeApp(config);
+  </script>
+</head>
+
+<body>
+
+  <div ng-view></div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+  <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+  <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+  <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+  <script src="http://ui-grid.info/release/ui-grid.js"></script>
+  <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+  <script src="bower_components/fusioncharts/fusioncharts.js"></script>
+  <script src="bower_components/fusioncharts/fusioncharts.maps.js"></script>
+  <script type="text/javascript" src="login/login.js"></script>
+  <script type="text/javascript" src="signup/signup.js"></script>
+  <script type="text/javascript" src="welcome/welcome.js"></script>
+  <script type="text/javascript" src="register/register.js"></script>
+
+  <script type="text/javascript" src="js/angular-fusioncharts.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="app.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="charts/charts.js"></script>
+
+</body>
+
+</html>

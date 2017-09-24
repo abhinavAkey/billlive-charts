@@ -1,0 +1,258 @@
+<!doctype html>
+<html ng-app>
+
+<head>
+</head>
+
+<body class="login" ng-controller="ChartsCtrl">
+    <header class="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 headertop">
+                    <div id="logo">
+                        <a href="#">Billlive</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <nav class="navbar navbar-default" style="margin-top:60px;margin-bottom: 0;">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <!-- <a class="navbar-brand" href="#">Sample</a> -->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse button-menu" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                        <li><a href="#/Billlive">Home</a></li>
+                        <li><a href="#/charts">Charts</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                        
+                                                <div class="col-sm-6 col-md-6">
+                                                    <form class="navbar-form" role="search">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Search" name="q" style="height: 28px;">
+                                                            <div class="input-group-btn">
+                                                                <button class="btn btn-default" type="submit" style="height: 28px;padding-top: 4px;" ><i class="glyphicon glyphicon-search"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                        
+                        
+                                                <li class="dropdown">
+                        
+                        
+                        
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top:5px;">
+                                                            {{username}}
+                                                          </button>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        
+                                                            <div class="navbar-login">
+                                                                <div class="row">
+                                                                    <div class="col-lg-4">
+                                                                        <p class="text-center">
+                                                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="col-lg-8" style="padding-right: 30px;padding-left: 30px;">
+                                                                        <!-- <p class="text-left"><strong>Mahesh</strong></p> -->
+                                                                        <p class="text-left small">justdemo@gmail.com</p>
+                                                                        <p class="text-left" ng-click="logout()">
+                                                                            <a href="#" class="btn btn-primary btn-block btn-sm">Logout</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                        
+                                                            <!-- <div class="navbar-login navbar-login-session">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12" style="padding-right: 30px;padding-left: 30px;">
+                                                                        <p>
+                                                                            <a href="#" class="btn btn-primary btn-block">My Profile</a>
+                                                                            <a href="#" class="btn btn-danger btn-block">Change Password</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div> -->
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+   
+
+    
+    <div class="dashboard" >
+        <div class="container-fluid">
+                <div class="form-group" style="margin: 2% 0% 5% 35%;">
+                        <input type="file" id="file"  name="file" class="control-label col-md-3"/>
+                                <div class="controls col-md-8 ">
+                                        <input type="button" id="" class="btn btn-default btn-blue" value="Upload" ng-click="uploadCsv()"/>
+                                </div>
+                    </div>
+
+                <!-- <div class="col-md-offset-1 col-md-2">
+                        <input type="file" id="file"  name="file"/>
+
+                          <input type="button" id="" class="btn btn-default btn-blue" value="Upload" ng-click="uploadCsv()"/>
+                      </div> -->
+                <table style="margin: 0% 0% 0% 16%;">
+                        <tr>
+                            <td style="padding:20px">
+                                <div class="form-group">
+                                        <div>
+                                            <select id="product"  class="form-control" ng-model="productName">
+                                        <option value="">Choose Product</option>
+                                        <option ng-repeat="product in product_name" value="{{product}}">{{product}}</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                            </td>
+                            <td style="padding:20px">
+                                <div class="form-group">
+                                        <div>
+                                            <select id="year"  class="form-control" ng-model="yearsList">
+                                        <option value="">Choose Year</option>
+                                        <option ng-repeat="year in years" value="{{year.value}}">{{year.year}}</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                            </td>
+                            <td style="padding:20px">
+                                <div class="form-group">
+                                        <div>
+                                            <select id="state"  class="form-control" ng-model="state1" ng-options="districts as state for (state, districts) in states">
+                                        <option value="">Choose State</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                            </td>
+                            <td style="padding:20px">
+                                <div class="form-group">
+                                <div>
+                                    <select id="district" ng-model="district" class="form-control" ng-disabled="!state1" ng-options="district as district for district in state1">
+                                <option value="">Choose District</option>
+                                </select>
+                                </div>
+                            </div>
+                            </td>
+                            <td style="padding:20px">
+                                <div class="form-group">
+                                <input class="btn btn-primary" type="submit" ng-disabled="!district" value="Submit">    
+                                </div>
+                            </td>
+                        </tr>
+                    </table>⁠⁠⁠⁠
+            <div class="row" ng-if="myDataSource">
+                
+                    <div class="modal-dialog" style="width: 1400px;">
+                        <div class="modal-content" style="margin-bottom: 0px;">
+                            <div class="modal-header login_modal_header">
+                                <h2 class="modal-title" id="myModalLabel">Charts</h2>
+                            </div>
+                            <div style="margin-right: 10%; float:right;" fusioncharts width="500" height="500" type="area2d" dataSource="{{myDataSource}}"></div>
+                            <div style="margin-left: 10%;"  fusioncharts width="500" height="500" type="pie3d" dataSource="{{myDataSource}}">
+                            </div>
+
+
+                        </div>
+                        
+                    </div>
+            </div>
+
+
+
+
+            <!-- <div  id="calculations">
+                
+                <div class="modal-dialog" style="margin: 5% 5%;width: 1400px;">
+                    <div class="modal-content" style="margin-bottom: 80px;">
+                        <div class="modal-header login_modal_header">
+                            <h2 class="modal-title" id="myModalLabel">Items</h2>
+                        </div>
+                        <div class="registration" style="padding: 0 13% 0 13%;">
+                            <br/>
+                            <div class="clearfix"></div>
+
+                            <div class="widget stacked widget-table action-table" style="margin-top:20px;">
+
+
+                                <div class="widget-content">
+
+                                    <table class="table table-striped table-condensed">
+                                        <thead>
+                                            <tr>
+                                                <th>Item Name</th>
+                                                <th>Units</th>
+                                                <th>Rate Of Each Bag</th>
+                                                <th>Quantity Ordered</th>
+                                                <th>Gross Amount</th>
+                                                <th>Vat Amount</th>
+                                                <th>Net Amount</th>
+                                                <th>Number Of Bags</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="x in myDataSource.data">
+                                                    <td>{{x.item_Name}}</td>
+                                                    <td>{{x.kgs_Grams}}</td>
+                                                    <td>{{x.rate}}</td>
+                                                    <td>{{x.qty}}</td>
+                                                    <td>{{x.value}}</td>
+                                                    <td>{{x.vat}}</td>
+                                                    <td>{{x.net}}</td>
+                                                    <td>{{x.bags}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="modal-footer login_modal_footer">
+                        </div>
+                    </div>
+                </div>
+
+            </div> -->
+        </div>
+    </div>
+    </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-lg-12 footertext">A Product of PriyaBeatus soft consulting & solutions (P) LTD.<br/> Copyright © 2017 Design & Developed by
+                    PriyaBeatus soft consulting & solutions (P) LTD.</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
